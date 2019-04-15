@@ -27,7 +27,7 @@ namespace ex2
         //Method Overloading
         public static int Seq(int a)
         {
-            Console.WriteLine("Method Overiding: Sequence");
+            Console.WriteLine("** Method Overiding: Sequence **");
             int seq = 0;
             for (int i = 0; i <= a; i++)
             {
@@ -39,7 +39,7 @@ namespace ex2
         }
         public static int Seq(int a, int b)
         {
-            Console.WriteLine("Method Overiding: Sequence within a range.");
+            Console.WriteLine("** Method Overiding: Sequence within a range **");
             int seq = 0;
             for (int i = a; i <= b; i++)
             {
@@ -62,7 +62,7 @@ namespace ex2
         //Create a method to verify if a string is a palindrome (Use the created property).
         public static void CheckForPalindrome(string str)
         {
-            Console.WriteLine("Method : Palindrome");
+            Console.WriteLine("** Method : Palindrome **");
             string rvrs;
             char[] ch = str.ToCharArray();
             Array.Reverse(ch);
@@ -71,11 +71,11 @@ namespace ex2
             bool b = str.Equals(rvrs, StringComparison.OrdinalIgnoreCase);
             if (b == true)
             {
-                Console.WriteLine(str + "is a Palindrome.");
+                Console.WriteLine(str + " is a Palindrome.");
             }
             else
             {
-                Console.WriteLine(str + "is NOT a Palindrome.");
+                Console.WriteLine(str + " is NOT a Palindrome.");
             }
         }
 
@@ -83,15 +83,16 @@ namespace ex2
         //Create a method to print numbers in diagonal.
         public static void DiagonalPrint(int num)
         {
-            StringBuilder diagonal = new StringBuilder();
-            string sBuilderResult = " ";
+           StringBuilder diagonal = new StringBuilder();
+            string sBuilderResult = "";
             string spaces = "";
             for(int i =0; i<num;i++)
             {
-                diagonal.Append(spaces + i);
+                diagonal.AppendLine(spaces + i);
                 spaces += " ";
             }
             sBuilderResult = diagonal.ToString();
+            Console.WriteLine("** Diagonal Printing **");
             Console.WriteLine(sBuilderResult);
         }
 
@@ -110,13 +111,14 @@ namespace ex2
 
             Console.WriteLine(p1.LastName);
 
-            CheckForPalindrome("mariana");
+            CheckForPalindrome("Malayalam");
 
-            DiagonalPrint(10);
             Seq(10);
             Seq(5, 10);
 
-            
+            DiagonalPrint(10);
+
+
         }
     }
 }
@@ -127,6 +129,6 @@ Apply constructor overloading. *
 Apply method overloading. *
 Create a property that returns a string. *
 Create a method to verify if a string is a palindrome (Use the created property).*
-Create a method to print numbers in diagonal.
+Create a method to print numbers in diagonal.*
 */
   
